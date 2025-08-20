@@ -1,0 +1,25 @@
+{
+  "name": "transformice-bot-render",
+  "version": "1.0.0",
+  "description": "Bot de boas-vindas do Transformice com conexão real",
+  "main": "server/index.js",
+  "scripts": {
+    "build": "tsc && cp -r client/dist server/dist/",
+    "start": "node server/dist/index.js",
+    "dev": "npm run build && npm start"
+  },
+  "dependencies": {
+    "@neondatabase/serverless": "^0.10.3",
+    "express": "^4.21.2",
+    "ws": "^8.18.0",
+    "drizzle-orm": "^0.36.4",
+    "zod": "^3.23.8",
+    "typescript": "^5.7.2",
+    "@types/node": "^22.10.2",
+    "@types/express": "^5.0.0",
+    "@types/ws": "^8.5.13"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
