@@ -3,7 +3,7 @@ services:
     name: transformice-bot
     env: node
     plan: free
-    buildCommand: chmod +x simple-build.sh && ./simple-build.sh
+    buildCommand: npm install && mkdir -p dist/public && echo '<!DOCTYPE html><html><head><title>Bot Online</title></head><body><h1>Transformice Bot Funcionando</h1><p>Configure suas credenciais via API</p></body></html>' > dist/public/index.html && npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
     startCommand: npm start
     envVars:
       - key: NODE_ENV
