@@ -1,13 +1,18 @@
 #!/bin/bash
 set -e
 
-echo "Installing dependencies..."
+echo "=== INSTALLING DEPENDENCIES ==="
 npm install
 
-echo "Building frontend with production config..."
+echo "=== BUILDING FRONTEND ==="
+echo "Current directory: $(pwd)"
+echo "Client directory exists: $(ls -la client/ | head -5)"
+echo "Building with simplified Vite config..."
 npx vite build --config vite.config.prod.ts
 
-echo "Building backend..."
+echo "=== BUILDING BACKEND ==="
 npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist
 
-echo "Build completed successfully!"
+echo "=== BUILD COMPLETED ==="
+echo "Dist contents:"
+ls -la dist/ || echo "dist/ not found yet"
