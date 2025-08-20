@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "build": "mkdir -p dist/public && echo '<!DOCTYPE html><html><head><title>Transformice Bot</title><style>body{font-family:Arial;max-width:600px;margin:50px auto;padding:20px;background:#1a1a1a;color:#fff;}h1{color:#4CAF50;text-align:center;}.status{background:#2d2d2d;padding:20px;border-radius:8px;}.online{color:#4CAF50;font-weight:bold;}</style></head><body><h1>🎮 Bot Transformice Online</h1><div class=\"status\"><h2>Status: <span class=\"online\">FUNCIONANDO ✅</span></h2><p>Bot está rodando 24/7 no Render</p><p>Use a API para configurar: POST /api/bot/config</p><p>Exemplo: {\"username\":\"seu_nick\",\"password\":\"sua_senha\",\"isActive\":true}</p></div></body></html>' > dist/public/index.html && npx esbuild server/index.ts --platform=node --packages=external --bundle --format=esm --outdir=dist",
+    "build": "mkdir -p dist/public && echo '<!DOCTYPE html><html><head><title>Transformice Bot</title><style>body{font-family:Arial;max-width:600px;margin:50px auto;padding:20px;background:#1a1a1a;color:#fff;}h1{color:#4CAF50;text-align:center;}.status{background:#2d2d2d;padding:20px;border-radius:8px;}.online{color:#4CAF50;font-weight:bold;}</style></head><body><h1>🎮 Bot Transformice Online</h1><div class=\"status\"><h2>Status: <span class=\"online\">FUNCIONANDO ✅</span></h2><p>Bot está rodando 24/7 no Render</p><p>Use a API para configurar: POST /api/bot/config</p><p>Exemplo: {\"username\":\"seu_nick\",\"password\":\"sua_senha\",\"isActive\":true}</p></div></body></html>' > dist/public/index.html && npx esbuild server/index.ts --platform=node --bundle --format=esm --outdir=dist",
     "start": "NODE_ENV=production node dist/index.js"
   },
   "dependencies": {
